@@ -1,0 +1,3 @@
+[workspace]
+members = ["bevy_crab_networking", "bevy_crab_networking_example"]
+resolver = "2"
