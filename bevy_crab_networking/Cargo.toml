@@ -2,6 +2,7 @@
 name = "bevy_crab_networking"
 version = "0.1.0"
 edition = "2021"
+authors = ["George Fitikides - redstonergm@gmail.com"]
 
 [dependencies]
 bevy = "0.14.2"
