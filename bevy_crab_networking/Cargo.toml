@@ -2,7 +2,7 @@
 name = "bevy_crab_networking"
 version = "0.1.0"
 edition = "2021"
-license = ["MIT"]
+license = "MIT"
 description = "Bevy plugin for sending data over TCP"
 authors = ["George Fitikides - redstonergm@gmail.com"]
 
