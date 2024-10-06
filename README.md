@@ -4,7 +4,7 @@ Multiplayer made easy! ...easier.
 
 This [Bevy](https://bevyengine.org/) plugin makes hosting a server, connecting to it, and sending packets of data to and from as easy as pie, no wait, that's Python. Crabcake? Now that you know that this Readme or the crate wasn't written by ChatGPT, let's get down to business.
 
-_If you don't like reading my incoherent ramblings, here are some examples_
+_If you don't like reading my incoherent ramblings, here are some [examples](https://github.com/redstonerti/bevy_crab_networking/tree/main/examples)_
 
 ## Setup
 
