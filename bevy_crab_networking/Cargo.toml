@@ -5,7 +5,9 @@ edition = "2021"
 license = "MIT"
 readme = "README.md"
 description = "Bevy plugin for sending data over TCP"
-authors = ["George Fitikides - redstonergm@gmail.com"]
+documentation = "https://docs.rs/bevy_crab_networking"
+repository = "https://github.com/redstonerti/bevy_crab_networking"
+authors = ["George Fitikides <redstonergm@gmail.com>"]
 
 [dependencies]
 bevy = "0.14.2"
