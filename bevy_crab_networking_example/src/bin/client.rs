@@ -33,8 +33,7 @@ struct HasChoice(bool);
 struct DataUploadTimer(Timer);
 fn main() {
     App::new()
-        .add_plugins(DefaultPlugins)
-        .add_plugins(BevyCrabNetworkingPlugin)
+        .add_plugins((DefaultPlugins, BevyCrabNetworkingPlugin))
         .add_event::<UpdateText>()
         .add_event::<SpawnPlayer>()
         .insert_resource(ClientConfig {
