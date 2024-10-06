@@ -1,19 +1,14 @@
 # Bevy crab networking
 
-[![crates.io]()
-[![docs]()
-[![license]()
-[![crates.io]()
-
 Multiplayer made easy! ...easier.
 
-This [Bevy][bevy] plugin makes hosting a server, connecting to it, and sending packets of data to and from as easy as pie, no wait, that's Python. Crabcake? Now that you know that this Readme or the crate wasn't written by ChatGPT, let's get down to business.
+This [Bevy](https://bevyengine.org/) plugin makes hosting a server, connecting to it, and sending packets of data to and from as easy as pie, no wait, that's Python. Crabcake? Now that you know that this Readme or the crate wasn't written by ChatGPT, let's get down to business.
 
 _If you don't like reading my incoherent ramblings, here are some examples_
 
 ## Setup
 
-To setup the plugin, add the BevyNetworkingPlugin to your plugins and if you're making a server, add the ServerConfig resource, and if you're making a client, add the ClientConfig resource.
+To setup the plugin, add the `BevyNetworkingPlugin` to your plugins and if you're making a server, add the `ServerConfig` resource, and if you're making a client, add the `ClientConfig` resource.
 Keep in mind that it is highly advised that both your client and server depend on a single library to avoid confusion and duplicate code.
 
 
