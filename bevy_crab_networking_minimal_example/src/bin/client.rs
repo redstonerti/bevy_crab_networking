@@ -3,7 +3,9 @@ use bevy_crab_networking::{
     connect_to_server, is_connected_to_server, BevyCrabNetworkingPlugin, ClientConfig,
     ClientDataReadEvent, ClientDataUploader,
 };
-use bevy_networking_minimal_example::{BevyNetworkingTestLibPlugin, MessageUploadTimer, Packet};
+use bevy_crab_networking_minimal_example::{
+    BevyNetworkingTestLibPlugin, MessageUploadTimer, Packet,
+};
 struct BevyNetworkingTestClientPlugin;
 
 impl Plugin for BevyNetworkingTestClientPlugin {
@@ -48,8 +50,8 @@ fn send_messages(
             .unwrap();
     }
 }
-fn handle_incoming_data(mut client_data_read_reader: EventReader<ClientDataReadEvent>) {
-    for event in client_data_read_reader.read() {
+fn handle_incoming_data(mut client_data_reader: EventReader<ClientDataReadEvent>) {
+    for event in client_data_reader.read() {
         match event.data_packet.identifier {
             0 => match bincode::deserialize::<Packet>(&event.data_packet.bytes)
                 .expect("Failed to deserialize packet")

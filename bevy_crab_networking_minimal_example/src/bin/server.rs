@@ -1,7 +1,9 @@
 use bevy::{ecs::system::RunSystemOnce, prelude::*};
 use bevy_crab_networking::{host_server, BevyCrabNetworkingPlugin, Recipient};
 use bevy_crab_networking::{ServerConfig, ServerDataReadEvent, ServerDataUploader};
-use bevy_networking_minimal_example::{BevyNetworkingTestLibPlugin, MessageUploadTimer, Packet};
+use bevy_crab_networking_minimal_example::{
+    BevyNetworkingTestLibPlugin, MessageUploadTimer, Packet,
+};
 
 struct BevyNetworkingTestServerPlugin;
 impl Plugin for BevyNetworkingTestServerPlugin {
@@ -40,10 +42,10 @@ fn setup(world: &mut World) {
     world.run_system_once(host_server).unwrap();
 }
 fn handle_incoming_data(
-    mut server_data_read_reader: EventReader<ServerDataReadEvent>,
+    mut server_data_reader: EventReader<ServerDataReadEvent>,
     mut data_uploader: ResMut<ServerDataUploader>,
 ) {
-    for event in server_data_read_reader.read() {
+    for event in server_data_reader.read() {
         match event.data_packet.identifier {
             0 => {
                 match bincode::deserialize::<Packet>(&event.data_packet.bytes)

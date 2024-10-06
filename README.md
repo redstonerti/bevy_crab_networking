@@ -103,8 +103,8 @@ Now that identifier that we specified with the Identify trait will come in handy
 You match the struct or enum with the identifier in the `DataPacket` from the `ClientDataReadEvent`, and then in the case of the `Packet` enum you created, you can match with that to see what kind of data you received.
 
 ```rust
-fn handle_incoming_data(mut client_data_read_reader: EventReader<ClientDataReadEvent>) {
-    for event in client_data_read_reader.read() {
+fn handle_incoming_data(mut client_data_reader: EventReader<ClientDataReadEvent>) {
+    for event in client_data_reader.read() {
         match event.data_packet.identifier {
             0 => match bincode::deserialize::<Packet>(&event.data_packet.bytes)
                 .expect("Failed to deserialize packet")
@@ -126,10 +126,10 @@ Instead of a `ClientDataReadEvent`, you get a `ServerDataReadEvent`. The only di
 
 ```rust
 fn handle_incoming_data(
-    mut server_data_read_reader: EventReader<ServerDataReadEvent>,
+    mut server_data_reader: EventReader<ServerDataReadEvent>,
     mut data_uploader: ResMut<ServerDataUploader>,
 ) {
-    for event in server_data_read_reader.read() {
+    for event in server_data_reader.read() {
         match event.data_packet.identifier {
             0 => {
                 match bincode::deserialize::<Packet>(&event.data_packet.bytes)

@@ -1,5 +1,5 @@
 [package]
-name = "bevy_networking_minimal_example"
+name = "bevy_crab_networking_minimal_example"
 version = "0.1.0"
 edition = "2021"
 
